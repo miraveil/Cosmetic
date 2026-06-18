@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pink Glow Beauty — Spa & Beauty Studio</title>
+  <meta name="description" content="Pink Glow Beauty cung cấp dịch vụ chăm sóc da, spa thư giãn, phun xăm thẩm mỹ và làm đẹp chuyên nghiệp." />
+
+  <style>
+    :root {
+      --bg: #fff8fb;
+      --text: #2d1f28;
+      --muted: #735f69;
+      --faint: #9b7d8c;
+      --brand: #ff5fa2;
+      --brand-2: #ffc2d9;
+      --brand-3: #fff0f6;
+      --border: rgba(255, 95, 162, .18);
+      --shadow: 0 18px 50px rgba(255, 95, 162, .18);
+      --radius: 22px;
+      --max: 1180px;
+      --gap: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color: var(--text);
+      background:
+        radial-gradient(900px 480px at 10% -10%, rgba(255, 95, 162, .22), transparent 55%),
+        radial-gradient(900px 500px at 95% 0%, rgba(255, 194, 217, .42), transparent 55%),
+        var(--bg);
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, .72);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+
+    .card-pad {
+      padding: 26px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .faint {
+      color: var(--faint);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255, 248, 251, .82);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      color: var(--text);
+    }
+
+    .logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      box-shadow: 0 12px 30px rgba(255, 95, 162, .28);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 18px;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav a {
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 16px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, .72);
+      color: var(--text);
+      font-weight: 900;
+      font-size: 14px;
+    }
+
+    .btn-primary {
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      color: #351521;
+      box-shadow: 0 16px 38px rgba(255, 95, 162, .28);
+    }
+
+    main {
+      padding: 42px 0 0;
+    }
+
+    section {
+      scroll-margin-top: 90px;
+      margin-bottom: 56px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: var(--gap);
+      align-items: stretch;
+    }
+
+    h1 {
+      margin: 14px 0 12px;
+      font-size: clamp(36px, 4.5vw, 58px);
+      line-height: 1.05;
+      letter-spacing: -.8px;
+    }
+
+    h2 {
+      font-size: 30px;
+      margin: 0 0 10px;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+    }
+
+    .hero p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      background: var(--brand-3);
+      border-radius: 999px;
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .stat {
+      padding: 16px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--brand-3);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 22px;
+      color: var(--brand);
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: flex-end;
+      margin-bottom: 18px;
+    }
+
+    .section-title p {
+      margin: 0;
+      max-width: 58ch;
+      color: var(--muted);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--gap);
+    }
+
+    .feature {
+      padding: 22px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, .72);
+      box-shadow: 0 12px 34px rgba(255, 95, 162, .12);
+    }
+
+    .feature p,
+    .quote p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(255, 95, 162, .22), rgba(255, 194, 217, .45));
+      border: 1px solid var(--border);
+      margin-bottom: 12px;
+      font-size: 20px;
+    }
+
+    .quote {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 22px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, .72);
+      box-shadow: 0 12px 34px rgba(255, 95, 162, .12);
+    }
+
+    .who {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 15px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+    }
+
+    .who span {
+      display: block;
+      font-size: 12px;
+      color: var(--faint);
+      font-weight: 800;
+    }
+
+    .cta {
+      padding: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      background:
+        linear-gradient(135deg, rgba(255, 95, 162, .18), rgba(255, 194, 217, .38)),
+        rgba(255, 255, 255, .72);
+    }
+
+    .cta p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      max-width: 62ch;
+    }
+
+    footer {
+      padding: 28px 0 42px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      background: rgba(255, 255, 255, .45);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: var(--gap);
+    }
+
+    .footer-grid h3 {
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .fineprint {
+      margin-top: 14px;
+      font-size: 12px;
+      color: var(--faint);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .grid-3,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title,
+      .cta {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Pink Glow Beauty home">
+        <span class="logo" aria-hidden="true"></span>
+        <span>Pink Glow Beauty</span>
+      </a>
+
+      <nav aria-label="Điều hướng chính">
+        <ul>
+          <li><a href="#about">Giới thiệu</a></li>
+          <li><a href="#services">Dịch vụ</a></li>
+          <li><a href="#features">Lợi ích</a></li>
+          <li><a href="#reviews">Đánh giá</a></li>
+          <li><a href="#contact">Liên hệ</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn-primary" href="#contact">Đặt lịch</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero container">
+      <div class="hero-grid">
+        <div class="card card-pad">
+          <span class="pill">
+            <span class="dot"></span>
+            Beauty studio thân thiện cho mọi cô gái
+          </span>
+
+          <h1>Tỏa sáng với vẻ đẹp tự nhiên của riêng bạn.</h1>
+
+          <p>
+            Pink Glow Beauty mang đến các dịch vụ chăm sóc da, spa thư giãn,
+            phun xăm thẩm mỹ và làm đẹp chuyên nghiệp trong không gian nhẹ nhàng,
+            dễ chịu và gần gũi.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Đặt lịch ngay</a>
+            <a class="btn" href="#services">Xem dịch vụ</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <strong>500+</strong>
+              <span>Khách hàng hài lòng</span>
+            </div>
+
+            <div class="stat">
+              <strong>5★</strong>
+              <span>Trải nghiệm tận tâm</span>
+            </div>
+
+            <div class="stat">
+              <strong>1:1</strong>
+              <span>Tư vấn theo từng làn da</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card-pad">
+          <h2>Làm đẹp nhẹ nhàng, tự nhiên</h2>
+
+          <p class="muted">
+            Chúng tôi tập trung vào vẻ đẹp khỏe khoắn, hài hòa và phù hợp với từng khách hàng.
+            Mỗi liệu trình đều được tư vấn kỹ trước khi thực hiện.
+          </p>
+
+          <div class="feature">
+            <div class="icon">🌸</div>
+            <h3>Chăm sóc da</h3>
+            <p>Làm sạch sâu, cấp ẩm, phục hồi và nuôi dưỡng làn da sáng khỏe.</p>
+          </div>
+
+          <br />
+
+          <div class="feature">
+            <div class="icon">💗</div>
+            <h3>Không gian thư giãn</h3>
+            <p>Một nơi nhỏ xinh để bạn nghỉ ngơi, chăm sóc bản thân và lấy lại năng lượng.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="container">
+      <div class="section-title">
+        <div>
+          <h2>Về Pink Glow Beauty</h2>
+          <p>
+            Pink Glow Beauty là studio làm đẹp với phong cách gần gũi, trẻ trung và dễ tiếp cận.
+            Chúng tôi tin rằng làm đẹp không cần quá cầu kỳ — chỉ cần đúng cách, an toàn và phù hợp với bạn.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <article class="card card-pad">
+          <h3>Tận tâm</h3>
+          <p class="muted">
+            Mỗi khách hàng đều được lắng nghe, tư vấn kỹ và lựa chọn liệu trình phù hợp.
+          </p>
+        </article>
+
+        <article class="card card-pad">
+          <h3>An toàn</h3>
+          <p class="muted">
+            Sử dụng sản phẩm chọn lọc, quy trình vệ sinh kỹ lưỡng và thao tác nhẹ nhàng.
+          </p>
+        </article>
+
+        <article class="card card-pad">
+          <h3>Tự nhiên</h3>
+          <p class="muted">
+            Hướng đến vẻ đẹp hài hòa, tươi tắn và giúp bạn tự tin hơn mỗi ngày.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="services" class="container">
+      <div class="section-title">
+        <div>
+          <h2>Dịch vụ làm đẹp</h2>
+          <p>
+            Các dịch vụ phổ biến dành cho khách hàng muốn chăm sóc da, thư giãn
+            và nâng cấp diện mạo một cách nhẹ nhàng.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="feature">
+          <div class="icon">✨</div>
+          <h3>Chăm sóc da cơ bản</h3>
+          <p>Làm sạch, tẩy tế bào chết, xông hơi, hút dầu thừa và cấp ẩm cho da.</p>
+        </div>
+
+        <div class="feature">
+          <div class="icon">🌿</div>
+          <h3>Phục hồi da</h3>
+          <p>Hỗ trợ làn da nhạy cảm, thiếu ẩm, xỉn màu hoặc cần chăm sóc sau treatment.</p>
+        </div>
+
+        <div class="feature">
+          <div class="icon">💆‍♀️</div>
+          <h3>Spa thư giãn</h3>
+          <p>Massage mặt, cổ vai gáy và liệu trình thư giãn giúp giảm căng thẳng.</p>
+        </div>
+
+        <div class="feature">
+          <div class="icon">💄</div>
+          <h3>Phun môi tự nhiên</h3>
+          <p>Tư vấn màu môi phù hợp, giúp gương mặt tươi tắn và rạng rỡ hơn.</p>
+        </div>
+
+        <div class="feature">
+          <div class="icon">🪞</div>
+          <h3>Chân mày thanh tú</h3>
+          <p>Tạo dáng chân mày mềm mại, hài hòa với khuôn mặt và phong cách cá nhân.</p>
+        </div>
+
+        <div class="feature">
+          <div class="icon">🎀</div>
+          <h3>Gói chăm sóc định kỳ</h3>
+          <p>Lộ trình chăm sóc theo tuần hoặc tháng để duy trì làn da khỏe đẹp lâu dài.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="container">
+      <div class="section-title">
+        <div>
+          <h2>Vì sao chọn chúng tôi?</h2>
+          <p>
+            Pink Glow Beauty phù hợp với những ai muốn làm đẹp trong không gian thân thiện,
+            chi phí hợp lý và được tư vấn rõ ràng trước khi sử dụng dịch vụ.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <article class="card card-pad">
+          <h3>Dễ tiếp cận</h3>
+          <p class="muted">
+            Dịch vụ rõ ràng, tư vấn dễ hiểu, phù hợp cả với khách hàng mới bắt đầu chăm sóc da.
+          </p>
+        </article>
+
+        <article class="card card-pad">
+          <h3>Không ép dịch vụ</h3>
+          <p class="muted">
+            Chúng tôi đề xuất dựa trên nhu cầu thật và tình trạng thực tế của khách hàng.
+          </p>
+        </article>
+
+        <article class="card card-pad">
+          <h3>Kết quả tự nhiên</h3>
+          <p class="muted">
+            Ưu tiên vẻ đẹp nhẹ nhàng, tươi tắn và hài hòa thay vì thay đổi quá đậm.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="reviews" class="container">
+      <div class="section-title">
+        <div>
+          <h2>Khách hàng nói gì?</h2>
+          <p>
+            Một vài phản hồi mẫu từ khách hàng sau khi trải nghiệm dịch vụ tại Pink Glow Beauty.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="quote">
+          <p>
+            “Không gian rất dễ thương, nhân viên tư vấn nhẹ nhàng.
+            Mình cảm thấy da sạch và mềm hơn sau buổi đầu tiên.”
+          </p>
+
+          <div class="who">
+            <div class="avatar"></div>
+            <div>
+              <strong>Minh Anh</strong>
+              <span>Khách chăm sóc da</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="quote">
+          <p>
+            “Mình thích nhất là không bị ép mua thêm dịch vụ.
+            Mọi thứ được giải thích rõ ràng và rất thoải mái.”
+          </p>
+
+          <div class="who">
+            <div class="avatar"></div>
+            <div>
+              <strong>Khánh Linh</strong>
+              <span>Khách spa thư giãn</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="quote">
+          <p>
+            “Màu môi lên nhẹ nhàng, tự nhiên đúng như mình muốn.
+            Bạn kỹ thuật viên làm rất cẩn thận.”
+          </p>
+
+          <div class="who">
+            <div class="avatar"></div>
+            <div>
+              <strong>Thu Hà</strong>
+              <span>Khách phun môi</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="container">
+      <div class="card cta">
+        <div>
+          <h2>Sẵn sàng chăm sóc bản thân hôm nay?</h2>
+          <p>
+            Đặt lịch để được tư vấn miễn phí và chọn liệu trình phù hợp với làn da,
+            nhu cầu và ngân sách của bạn.
+          </p>
+        </div>
+
+        <a class="btn btn-primary" href="tel:0900000000">Gọi đặt lịch</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">
+          <span class="logo"></span>
+          <span>Pink Glow Beauty</span>
+        </div>
+
+        <p class="muted">
+          Spa & Beauty Studio thân thiện, nhẹ nhàng và dễ tiếp cận.
+        </p>
+
+        <div class="fineprint">
+          © <span id="year"></span> Pink Glow Beauty. All rights reserved.
+        </div>
+      </div>
+
+      <div>
+        <h3>Thông tin</h3>
+
+        <div class="footer-links">
+          <a href="#about">Giới thiệu</a>
+          <a href="#services">Dịch vụ</a>
+          <a href="#reviews">Đánh giá</a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Liên hệ</h3>
+
+        <div class="footer-links">
+          <a href="tel:0900000000">0900 000 000</a>
+          <a href="mailto:hello@pinkglow.vn">hello@pinkglow.vn</a>
+          <a href="#top">Lên đầu trang</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
